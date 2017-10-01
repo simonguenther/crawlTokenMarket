@@ -10,8 +10,8 @@ def open_connection():
 
 def insert_in_main(conn,general_obj):
 	if check_if_feed_exists(conn,general_obj["Name"]) == False:
-		query = "INSERT INTO projects_main (name, website, twitter, youtube, blog, facebook, discord, slack, telegram_ann, github) \
-	      VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'  )" % (general_obj["Name"],general_obj["Website"] ,general_obj["Twitter"],general_obj["YouTube"],general_obj["Blog"],general_obj["Facebook"], general_obj["Discord"], general_obj["Slack"], general_obj["Telegram"], general_obj["Github"])
+		query = "INSERT INTO projects_main (name, symbol, website, twitter, youtube, blog, facebook, discord, slack, telegram_ann, github) \
+	      VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'  )" % (general_obj["Name"],general_obj["Symbol"],general_obj["Website"] ,general_obj["Twitter"],general_obj["YouTube"],general_obj["Blog"],general_obj["Facebook"], general_obj["Discord"], general_obj["Slack"], general_obj["Telegram"], general_obj["Github"])
 		cur = conn.cursor()
 		cur.execute(query)
 		conn.commit()
